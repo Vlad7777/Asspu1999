@@ -1,0 +1,154 @@
+# ---------------------------------------------------------------------------
+VERSION = BCB.04.04
+# ---------------------------------------------------------------------------
+!ifndef BCB
+BCB = $(MAKEDIR)\..
+!endif
+# ---------------------------------------------------------------------------
+PROJECT = ControlProject.exe
+OBJFILES = ControlProject.obj MainUnit.obj DMUnit.obj AboutUnit.obj RemUnit.obj \
+  KntrUnit.obj AktReadyUnit.obj UzlUnit.obj EnterpriseUnit.obj VidRemUnit.obj \
+  OrgUnit.obj BasicEquipUnit.obj TipuzUnit.obj ReasonUnit.obj Rsltform.obj \
+  ViolationTermsUnit.obj Qbfform.obj QRRemUnit.obj QRRemUzlUnit.obj
+RESFILES = ControlProject.res
+RESDEPEN = $(RESFILES) MainUnit.dfm DMUnit.dfm AboutUnit.dfm RemUnit.dfm KntrUnit.dfm \
+  AktReadyUnit.dfm UzlUnit.dfm EnterpriseUnit.dfm VidRemUnit.dfm OrgUnit.dfm \
+  BasicEquipUnit.dfm TipuzUnit.dfm ReasonUnit.dfm Rsltform.dfm \
+  ViolationTermsUnit.dfm Qbfform.dfm QRRemUnit.dfm QRRemUzlUnit.dfm
+LIBFILES =
+IDLGENFILES =
+IDLFILES =
+LIBRARIES = dclocx40.lib inet40.lib inetdb40.lib nmfast40.lib dss40.lib tee40.lib \
+  teedb40.lib teeui40.lib ibsmp40.lib vclmid40.lib vcljpg40.lib qrpt40.lib \
+  bcbsmp40.lib vcldbx40.lib vcldb40.lib vclx40.lib vcl40.lib
+SPARELIBS = vcl40.lib vclx40.lib vcldb40.lib vcldbx40.lib bcbsmp40.lib qrpt40.lib \
+  vcljpg40.lib vclmid40.lib ibsmp40.lib teeui40.lib teedb40.lib tee40.lib \
+  dss40.lib nmfast40.lib inetdb40.lib inet40.lib dclocx40.lib
+PACKAGES = vclx40.bpi vcl40.bpi vcldb40.bpi vcldbx40.bpi bcbsmp40.bpi dclocx40.bpi \
+  qrpt40.bpi teeui40.bpi teedb40.bpi tee40.bpi ibsmp40.bpi dss40.bpi nmfast40.bpi \
+  inetdb40.bpi inet40.bpi vclmid40.bpi MyPack.bpi
+PATHASM = .;
+PATHCPP = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+SYSDEFINES = NO_STRICT
+USERDEFINES =
+DEFFILE =
+# ---------------------------------------------------------------------------
+CFLAG1 = -I"D:\Program Files\Borland\CBuilder4\Projects";"D:\Program Files\Borland\CBuilder4\Projects\";"..\program files\borland\cbuilder3\bin";$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl \
+  -Od -Hc -H=$(BCB)\lib\vcl.csm -w -Ve -r- -a8 -k -y -v -vi- \
+  -D$(SYSDEFINES);$(USERDEFINES) -c -b- -w-par -w-inl -Vx -tWM
+CFLAG2 =
+CFLAG3 =
+IDLCFLAGS = -I"D:\Program Files\Borland\CBuilder4\Projects" \
+  -I"D:\Program Files\Borland\CBuilder4\Projects\" \
+  -I"..\program files\borland\cbuilder3\bin" -I$(BCB)\examples\controls \
+  -I$(BCB)\bin -I$(BCB)\include -I$(BCB)\include\vcl -src_suffixcpp
+PFLAGS = -U"D:\Program Files\Borland\CBuilder4\Projects";"D:\Program Files\Borland\CBuilder4\Projects\";"..\program files\borland\cbuilder3\bin";$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib;$(DEBUGLIBPATH) \
+  -I"D:\Program Files\Borland\CBuilder4\Projects";"D:\Program Files\Borland\CBuilder4\Projects\";"..\program files\borland\cbuilder3\bin";$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl \
+  -AWinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE -$YD \
+  -$W -$O- -JPHNV -M -JPHNE
+RFLAGS = -i"D:\Program Files\Borland\CBuilder4\Projects";"D:\Program Files\Borland\CBuilder4\Projects\";"..\program files\borland\cbuilder3\bin";$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl
+AFLAGS = /i"D:\Program Files\Borland\CBuilder4\Projects" \
+  /i"D:\Program Files\Borland\CBuilder4\Projects\" \
+  /i"..\program files\borland\cbuilder3\bin" /i$(BCB)\examples\controls \
+  /i$(BCB)\bin /i$(BCB)\include /i$(BCB)\include\vcl /mx /w2 /zi
+LFLAGS = -L"D:\Program Files\Borland\CBuilder4\Projects";"D:\Program Files\Borland\CBuilder4\Projects\";"..\program files\borland\cbuilder3\bin";$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib;$(DEBUGLIBPATH) \
+  -aa -Tpe -x -v
+IFLAGS =
+LINKER = ilink32
+# ---------------------------------------------------------------------------
+ALLOBJ = c0w32.obj sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib
+# ---------------------------------------------------------------------------
+.autodepend
+
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+FileVersion=1.0.0.0
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=D:\Program Files\Borland\CBuilder4\Projects;D:\Program Files\Borland\CBuilder4\Projects\;..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl
+Item1=D:\Program Files\Borland\CBuilder4\Projects\;..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl
+Item2=D:\Program Files\Borland\CBuilder4\Projects;..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl
+Item3=..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl
+Item4=$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=D:\Program Files\Borland\CBuilder4\Projects;D:\Program Files\Borland\CBuilder4\Projects\;..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib
+Item1=D:\Program Files\Borland\CBuilder4\Projects\;..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib
+Item2=D:\Program Files\Borland\CBuilder4\Projects;..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\program files\borland\cbuilder3\bin;$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib
+Item4=$(BCB)\examples\controls;$(BCB)\bin;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+InMemoryExe=0
+ShowInfoMsgs=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+!endif
+
+$(PROJECT): $(IDLGENFILES) $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES) 
+!
+
+.pas.hpp:
+    $(BCB)\BIN\dcc32 $(PFLAGS) { $** }
+
+.pas.obj:
+    $(BCB)\BIN\dcc32 $(PFLAGS) { $** }
+
+.cpp.obj:
+    $(BCB)\BIN\bcc32 $(CFLAG1) $(CFLAG2) -o$* $* 
+
+.c.obj:
+    $(BCB)\BIN\bcc32 $(CFLAG1) $(CFLAG2) -o$* $**
+
+.rc.res:
+    $(BCB)\BIN\brcc32 $(RFLAGS) $<
+#-----------------------------------------------------------------------------
